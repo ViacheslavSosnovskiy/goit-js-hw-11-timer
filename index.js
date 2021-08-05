@@ -1,17 +1,29 @@
+const refs = {
+  days: document.querySelector('[data-value="days"]'),
+  hours: document.querySelector('[data-value="hours"]'),
+  mins: document.querySelector('[data-value="mins"]'),
+  secs: document.querySelector('[data-value="secs]'),
+};
+
 const timer = {
   start() {
-    const startTime = Data.now();
+    const startTime = Date.now();
 
     setInterval(() => {
-      const currentTime = Data.now();
+      const currentTime = Date.now();
       const deltaTime = currentTime - startTime;
-      const { days, hours, mins, secs } = getTimeComponents(deltaTime);
-      console.log(timeComponents);
+      const time = getTimeComponents(deltaTime);
+      updateClockface(time);
+      //   console.log(`${days}:${hours}:${mins}:${secs}`);
     }, 1000);
   },
 };
 
 timer.start();
+
+function updateClockface({ days, hours, mins, secs }) {
+  refs.clockface.textContant = `${days}:${hours}:${mins}:${secs}`;
+}
 
 function pad(value) {
   return String(value).padStart(2, "0");

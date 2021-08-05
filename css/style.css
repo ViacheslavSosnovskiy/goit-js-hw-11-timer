@@ -1,0 +1,27 @@
+body {
+  margin: 50px;
+}
+
+.timer {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  /* background-color: teal; */
+}
+
+.field {
+  padding: 20px;
+  background-color: #000;
+}
+
+.field:not(:last-child) {
+  margin-right: 20px;
+}
+
+.value {
+  color: #fff;
+}
+
+.label {
+  color: #fff;
+}

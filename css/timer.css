@@ -1,0 +1,62 @@
+body {
+  margin: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 50px;
+  }
+}
+
+.timer {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.field {
+  padding: 10px;
+  background-color: #000;
+  border-radius: 15%;
+}
+
+.field:not(:last-child) {
+  margin-right: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .field {
+    padding: 20px;
+  }
+  .field:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.value {
+  font-size: 25px;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .value {
+    font-size: 50px;
+  }
+}
+
+.label {
+  font-size: 8px;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .label {
+    font-size: 10px;
+  }
+}
+/*# sourceMappingURL=timer.css.map */

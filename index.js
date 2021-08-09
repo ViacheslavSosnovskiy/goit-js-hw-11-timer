@@ -9,6 +9,7 @@ class Timer {
   constructor({ selector, targetDate }) {
     this.selector = selector;
     this.targetDate = targetDate;
+    this.interval = null;
   }
   start() {
     setInterval(() => {
@@ -20,6 +21,14 @@ class Timer {
       refs.hours.textContent = `${hours}`;
       refs.mins.textContent = `${mins}`;
       refs.secs.textContent = `${secs}`;
+
+      if (deltaTime <= 0) {
+        clearInterval(this.interval);
+        refs.days.textContent = `00`;
+        refs.hours.textContent = `00`;
+        refs.mins.textContent = `00`;
+        refs.secs.textContent = `00`;
+      }
     }, 1000);
   }
 
@@ -41,7 +50,7 @@ class Timer {
 
 const timer = new Timer({
   selector: "#timer-1",
-  targetDate: new Date("Aug 15, 2021"),
+  targetDate: new Date("Aug 09, 2021, 15:26:00"),
 });
 
 timer.start();
